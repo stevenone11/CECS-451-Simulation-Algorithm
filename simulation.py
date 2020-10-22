@@ -34,7 +34,7 @@ def calcError(nSize, circleCords):
 
     errorVal = abs(((math.pi - estPi)*100)/ math.pi)
 
-    print("with {0:} points, estimated pi is: {1:.6f}, error percentage is {2:.4f}".format(nSize, estPi, errorVal))
+    print("with {0:} points, estimated pi is: {1:.6f}, error percentage is {2:.4f} %".format(nSize, estPi, errorVal))
     return estPi, errorVal
 
 
@@ -46,7 +46,7 @@ def plotGraph(circleCords, outCircleCords, errorVal, estPi):
         plt.scatter(point[0], point[1], .1, color='r')
     plt.xlabel("X")
     plt.ylabel("Y")
-    plt.title("Simulation Method: calculating pi " + str(estPi) +" with error value: " + str(errorVal) + "%") 
+    plt.title("Simulation Method: calculating pi " + str(round(estPi,6)) +" with error value: " + str(round(errorVal,4)) + "%") 
     plt.show()
     plt.close()
 
