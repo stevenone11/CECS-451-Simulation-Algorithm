@@ -40,13 +40,13 @@ def calcError(nSize, circleCords):
 
 # plots the points in and outside of th circle
 def plotGraph(circleCords, outCircleCords, errorVal, estPi):
-    for point in circleCords:
-        plt.scatter(point[0], point[1], .1, color='b')
-    for point in outCircleCords:
-        plt.scatter(point[0], point[1], .1, color='r')
+    x, y = zip(*circleCords)
+    a, b = zip(*outCircleCords)
+    plt.scatter(x, y, .1, color = 'b')
+    plt.scatter(a, b, .1, color = 'r')
     plt.xlabel("X")
     plt.ylabel("Y")
-    plt.title("Simulation Method: calculating pi " + str(round(estPi,6)) +" with error value: " + str(round(errorVal,4)) + "%") 
+    plt.title("Simulation Method: calculating pi ") 
     plt.show()
     plt.close()
 
